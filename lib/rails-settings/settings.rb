@@ -102,12 +102,12 @@ module RailsSettings
 
     #get the value field, YAML decoded
     def value
-      YAML::load(self[:value])
+      JSON::load(self[:value])
     end
 
     #set the value field, YAML encoded
     def value=(new_value)
-      self[:value] = new_value.to_yaml
+      self[:value] = new_value.to_json
     end
 
     def self.thing_scoped
